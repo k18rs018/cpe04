@@ -153,7 +153,7 @@
     var active = false;
     var startTime = 0;
     var period = 0;
-
+    
 
     
     // ボタンの初期設定
@@ -196,7 +196,6 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        alarm();
         active = false;
         period = 60* parseInt($("#minute").val() ) + parseInt($("#second").val() );
         $("#time").html("経過時間： 0");
