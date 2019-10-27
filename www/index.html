@@ -153,13 +153,13 @@
     var active = false;
     var startTime = 0;
     var period = 0;
-    
+
 
     
     // ボタンの初期設定
     function init(){
         $('#btnA').prop('disabled', false);
-        $('#btnB').prop('disabled', false);
+        $('#btnB').prop('disabled', true);
         $('#btnC').prop('disabled', false);
         
     }
@@ -183,6 +183,8 @@
     function btnAClick(e){
       active = true;
       startTime = new Date();
+      $('#btnA').prop('disabled', true);
+      $('#btnB').prop('disabled', false);
         
         
     }
@@ -190,6 +192,8 @@
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
       active = false;
+      $('#btnB').prop('disabled', true);
+      $('#btnA').prop('disabled', false);
         
         
     }
