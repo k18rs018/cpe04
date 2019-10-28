@@ -213,8 +213,20 @@
       if(active) {
         var time = parseInt( (new Date() - startTime)/1000);
         var rest = period - time;
+        var m = parseInt(rest/60);
+        var s = parseInt(rest-m*60);
         $("#time").html("経過時間： " + time);
         $("#remain").html("残り時間： " + rest);
+        var str = "分：";
+        for(var i = 0; i< m; i++) {
+          str += "○";
+        }
+        $("#minuteStr").html(str);
+        var str = "秒：";
+        for(var i = 0; i< s; i++) {
+          str += "○";
+        }
+        $("#secondStr").html(str);
         analog(rest);
         if(rest == 0) {
           active = false;
@@ -237,7 +249,7 @@
     <div id="time">Time</div>
     <button id="btnA">ButtonA</button>  
     <button id="btnB">ButtonB</button>  
-    <button id="btnC">ButtonC</button>  
+    <button id="btnC">ButtonC</button> 
     <input type="number" id="minute" value=3 >
     <input type="number" id="second" value=0 >
 </body>
